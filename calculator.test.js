@@ -135,9 +135,9 @@ describe('divide', () => {
   });
 
   test('cannot divide by zero', () => {
-    expected = Infinity;
+    //expected = Infinity;
     actual = divide(5, 0);
-    expect(actual).toBe(expected);
+    expect(actual).toBeNan;
   });
 
   test('zero can be divided by another number', () => {
@@ -175,28 +175,54 @@ describe('modulus', () => {
 
 describe('even', () => {
   test('can get whether a positive number is even when it is', () => {
-    expected = true;
+    //expected = true;
     actual = even(32);
-    expect(actual).toBe(expected);
+    expect(actual).toBeTruthy;
   });
 
   test('can get whether a positive number is even when its not', () => {
-    expected = false;
+    //expected = false;
     actual = even(31);
-    expect(actual).toBe(expected);
+    expect(actual).toBeFalsy;
+  });
+
+  test('can get whether a negative number is even', () => {
+    //expected = true;
+    actual = even(-50);
+    expect(actual).toBeTruthy;
+  });
+
+  test('can get whether zero is even', () => {
+    //expected = true;
+    actual = even(0);
+    expect(actual).toBeTruthy;
   });
 });
 
 describe('odd', () => {
   test('can get whether a positive number is odd when it is', () => {
-    expected = true;
+    //expected = true;
     actual = odd(15);
-    expect(actual).toBe(expected);
+    expect(actual).toBeTruthy;
   });
 
   test('can get whether a positive number is odd when its not', () => {
-    expected = false;
+    //expected = false;
     actual = odd(12);
-    expect(actual).toBe(expected);
+    expect(actual).toBeFalsy;
   });
+
+  test('can get whether a negative number is odd when its not', () => {
+    //expected = false;
+    actual = odd(-10);
+    expect(actual).toBeFalsy;
+  });
+
+  test('can get that zero is not odd', () => {
+    //expected = false;
+    actual = odd(0);
+    expect(actual).toBeFalsy;
+  });
+
+
 });
