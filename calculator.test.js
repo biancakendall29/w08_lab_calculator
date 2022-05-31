@@ -96,9 +96,29 @@ describe('modulus', () => {
 });
 
 describe('even', () => {
+  test('can get whether a positive number is even when it is', () => {
+    expected = true;
+    actual = even(32);
+    expect(actual).toBe(expected);
+  });
 
+  test('can get whether a positive number is even when its not', () => {
+    expected = false;
+    actual = even(31);
+    expect(actual).toBe(expected);
+  });
 });
 
 describe('odd', () => {
+  test('can get whether a positive number is odd when it is', () => {
+    expected = true;
+    actual = odd(15);
+    expect(actual).toBe(expected);
+  });
 
+  test('can get whether a positive number is odd when its not', () => {
+    expected = false;
+    actual = odd(12);
+    expect(actual).toBe(expected);
+  });
 });
