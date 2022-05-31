@@ -20,9 +20,21 @@ console.log(divide(6, 3));
 const modulus = (a, b) => (a % b);
 console.log(modulus(6, 5));
 
-const even = null;
+const even = function(num) {
+    if (num % 2 === 0) {
+        return true;
+    }
+    return false;
+};
+console.log(even(4));
 
-const odd = null;
+const odd = function(num) {
+    if (num % 2 === 0) {
+        return false;
+    }
+    return true;
+};
+console.log(odd(5));
 
 module.exports = { 
     sum, 
