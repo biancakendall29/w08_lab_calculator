@@ -21,18 +21,28 @@ const modulus = (a, b) => (a % b);
 console.log(modulus(6, 5));
 
 const even = function(num) {
-    if (num % 2 === 0) {
-        return true;
-    }
-    return false;
+
+    //DRY solution
+    if (modulus(num, 2) === 0) return true;
+    else return false;
+
+    // if (num % 2 === 0) {
+    //     return true;
+    // }
+    // return false;
 };
 console.log(even(4));
 
 const odd = function(num) {
-    if (num % 2 === 0) {
-        return false;
-    }
-    return true;
+
+    // DRY solution
+    if (modulus(num, 2) === 0) return false;
+    else return true;
+
+    // if (num % 2 === 0) {
+    //     return false;
+    // }
+    // return true;
 };
 console.log(odd(5));
 
