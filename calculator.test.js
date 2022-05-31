@@ -48,11 +48,19 @@ describe('subtract', () => {
   test('can subtract two large positive numbers', () => {
     expected = 44546;
     actual = subtract(123456, 78910);
-  })
+  });
 });
 
 describe('multiply', () => {
+  test('can multiply two small positive numbers', () => {
+    expected = 10;
+    actual = subtract(2, 5);
+  });
 
+  test('can multiply two large positive numbers', () => {
+    expected = 7006652;
+    actual = subtract(1234, 5678);
+  });
 });
 
 describe('divide', () => {
