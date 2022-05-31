@@ -25,13 +25,19 @@ describe('sum', () => {
     expect(actual).toBe(expected);  
   });
 
-  test.skip('can add two negative numbers', () => {
-    expected = 3;
-    actual = sum(-2, 5);
+  test('can add two negative numbers', () => {
+    expected = -7;
+    actual = sum(-2, -5);
     expect(actual).toBe(expected);
   });
 
-  test.skip('can add zero', () => {
+  test('can add a negative number to a positive number', () => {
+    expected = 0;
+    actual = sum(5, -5);
+    expect(actual).toBe(expected);
+  });
+
+  test('can add zero', () => {
     expected = 7;
     actual = sum(0, 7);
     expect(actual).toBe(expected);
@@ -51,6 +57,18 @@ describe('subtract', () => {
     actual = subtract(123456, 78910);
     expect(actual).toBe(expected);
   });
+
+  test('can subtract two negative numbers', () => {
+    expected = -5;
+    actual = subtract(-10, -5);
+    expect(actual).toBe(expected);
+  });
+
+  test('can subtract a negative number from a positive number', () => {
+    expected = -5;
+    actual = subtract(-10, -5);
+    expect(actual).toBe(expected);
+  });
 });
 
 describe('multiply', () => {
@@ -63,6 +81,24 @@ describe('multiply', () => {
   test('can multiply two large positive numbers', () => {
     expected = 7006652;
     actual = multiply(1234, 5678);
+    expect(actual).toBe(expected);
+  });
+
+  test('can multiply two negative numbers', () => {
+    expected = 20;
+    actual = multiply(-5, -4);
+    expect(actual).toBe(expected);
+  });
+
+  test('can multiply a negative number and a positive number', () => {
+    expected = -30;
+    actual = multiply(-5, 6);
+    expect(actual).toBe(expected);
+  });
+
+  test('can multiply a by zero', () => {
+    expected = 0;
+    actual = multiply(0, 6);
     expect(actual).toBe(expected);
   });
 });
@@ -79,6 +115,36 @@ describe('divide', () => {
     actual = divide(123456, 6);
     expect(actual).toBe(expected);
   });
+
+  test('can divide a negtive number by a positive one', () => {
+    expected = -3;
+    actual = divide(-18, 6);
+    expect(actual).toBe(expected);
+  });
+
+  test('can divide a negtive number by a negative number', () => {
+    expected = 3;
+    actual = divide(-18, -6);
+    expect(actual).toBe(expected);
+  });
+
+  test('can divide a smaller number by a larger number', () => {
+    expected = 0.1;
+    actual = divide(5, 50);
+    expect(actual).toBe(expected);
+  });
+
+  test('cannot divide by zero', () => {
+    expected = Infinity;
+    actual = divide(5, 0);
+    expect(actual).toBe(expected);
+  });
+
+  test('zero can be divided by another number', () => {
+    expected = 0;
+    actual = divide(0, 5);
+    expect(actual).toBe(expected);
+  });
 });
 
 describe('modulus', () => {
@@ -91,6 +157,18 @@ describe('modulus', () => {
   test('can get the modulus between two large numbers', () => {
     expected = 372;
     actual = modulus(123456, 789);
+    expect(actual).toBe(expected);
+  });
+
+  test('can get the modulus of a negative number', () => {
+    expected = -1; // why
+    actual = modulus(-19, 6);
+    expect(actual).toBe(expected);
+  });
+
+  test('can get the modulus of two negative numbers', () => {
+    expected = -1; // why
+    actual = modulus(-19, -6);
     expect(actual).toBe(expected);
   });
 });

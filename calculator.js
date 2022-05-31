@@ -8,7 +8,7 @@ const sum = function(a, b){
     return a + b;
 };
 
-const subtract = (a, b) => Math.abs(a - b);
+const subtract = (a, b) => (a - b);
 console.log(subtract(2, 3));
 
 const multiply = (a, b) => (a * b);
