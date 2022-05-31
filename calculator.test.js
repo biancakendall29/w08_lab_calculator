@@ -40,7 +40,15 @@ describe('sum', () => {
 });
 
 describe('subtract', () => {
+  test('can subtract two small positive numbers', () => {
+    expected = 3;
+    actual = subtract(5, 2);
+  });
 
+  test('can subtract two large positive numbers', () => {
+    expected = 44546;
+    actual = subtract(123456, 78910);
+  })
 });
 
 describe('multiply', () => {
